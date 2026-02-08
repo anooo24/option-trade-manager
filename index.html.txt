@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IQ Option Trade Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <h1>📊 IQ Option Trade Manager</h1>
+
+  <div class="main-container">
+    <!-- Left: Trading Panel -->
+    <div class="left-panel">
+
+      <div class="balances">
+        <p>💰 Balance (USD): <strong>$<span id="balanceUSD">0.00</span></strong></p>
+        <p>🇲🇻 Balance (MVR): <strong>MVR <span id="balanceMVR">0.00</span></strong></p>
+        <p>🎯 Target Balance: <strong>$<span id="targetShow">0.00</span></strong></p>
+        <p id="status"></p>
+      </div>
+
+      <div class="inputs">
+        <label>Starting Capital (USD)</label>
+        <input type="number" id="capital" placeholder="100">
+
+        <label>Target Balance (USD)</label>
+        <input type="number" id="target" placeholder="120">
+
+        <button onclick="start()">Start Trading</button>
+      </div>
+
+      <div class="trade">
+        <p>💵 <strong>INVEST (Buy / Sell): $<span id="invest">0.00</span></strong></p>
+        <p>⛔ Max Loss: $<span id="loss">0.00</span></p>
+        <p>🟢 If WIN (Profit): $<span id="profit">0.00</span></p>
+        <p class="note" id="note"></p>
+
+        <div class="actions">
+          <button class="win" id="winBtn" onclick="win()">WIN</button>
+          <button class="loss" id="lossBtn" onclick="loss()">LOSS</button>
+        </div>
+      </div>
+
+      <div class="tips">
+        <h3>📰 Trading Tips</h3>
+        <p id="tipText">Stay disciplined.</p>
+      </div>
+
+      <div class="analysis">
+        <h3>📈 Market Analysis</h3>
+        <div class="analysis-buttons">
+          <button onclick="openAnalysis('tradingview')">📊 TradingView Charts</button>
+          <button onclick="openAnalysis('news')">🗞️ Market News</button>
+          <button onclick="openAnalysis('calendar')">🗓️ Economic Calendar</button>
+          <button onclick="openAnalysis('sentiment')">🔍 Sentiment Search</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Education Panel -->
+    <div class="edu-tab" onclick="toggleEducation()">📚 Education</div>
+
+    <div class="education" id="education">
+
+      <div class="edu-card">
+        <h3>📈 Candlesticks</h3>
+        <p>Candlesticks show price movement in a time period — open, high, low, close. Each candle reveals buyer/seller control.</p>
+        <img src="https://via.placeholder.com/400x200?text=Candlestick+Example" alt="Candlestick Chart Example">
+      </div>
+
+      <div class="edu-card">
+        <h3>🕯️ Patterns</h3>
+        <ul>
+          <li><strong>Bullish Engulfing</strong> – Green candle engulfs red, signals potential buy.</li>
+          <li><strong>Bearish Engulfing</strong> – Red candle engulfs green, signals potential sell.</li>
+          <li><strong>Hammer</strong> – Small body, long lower wick at bottoms — potential reversal up.</li>
+          <li><strong>Shooting Star</strong> – Small body, long upper wick at tops — potential reversal down.</li>
+        </ul>
+        <img src="https://via.placeholder.com/400x200?text=Candlestick+Patterns" alt="Candlestick Patterns Examples">
+      </div>
+
+      <div class="edu-card">
+        <h3>🧱 Support & Resistance</h3>
+        <p>Support = price floor, Resistance = price ceiling. Price bounces or breaks these levels, forming trading opportunities.</p>
+        <img src="https://via.placeholder.com/400x200?text=Support+%26+Resistance" alt="Support and Resistance Zones">
+      </div>
+
+      <div class="edu-card">
+        <h3>🎛️ Price Movement Logic</h3>
+        <p>Price often retests broken support/resistance. Identify trends: uptrend = higher highs/lows, downtrend = lower highs/lows.</p>
+      </div>
+
+      <div class="edu-card">
+        <h3>📺 Video Lessons</h3>
+        <div class="video-container">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/WjYcSUYzNOA" title="Candlestick Patterns Explained" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/QQdVlZEgoFk" title="Candlestick with S/R Levels" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <h3>🧠 How to Use</h3>
+        <p>Combine candlestick patterns with support/resistance for higher probability trades. Wait for confirmation before entry.</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
